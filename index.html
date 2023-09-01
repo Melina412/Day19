@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub cheat sheet</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GitHub cheat sheet</h1>
+      <nav>
+        <a href="./index.html">Grundlagen</a>
+        <a href="./vertiefung.html">Vertiefung</a>
+      </nav>
+    </header>
+    <main>
+      <h2>Neues Repository erstellen</h2>
+      <ol>
+        <li>In GitHub neues Repository erstellen und benennen</li>
+        <li>Ordner in VS Code ziehen und Terminal öffnen (Cmd+J)</li>
+        <li>Folgende Befehle im Terminal eingeben:</li>
+        <ul>
+          <li><span class="command">git init</span> [U = untract]</li>
+          <li><span class="command">git add .</span> [A = added]</li>
+          <li><span class="command">git commit -m 'first commit'</span></li>
+          <li><span class="command">git branch -m main</span></li>
+          <li>
+            <span class="command"
+              >git remote add origin
+              <span class="branch">https://github.com/Melina412/_____.git</span>
+            </span>
+            (url des repo auf github)
+          </li>
+          <li><span class="command">git push -u origin main</span></li>
+        </ul>
+      </ol>
+
+      <h2>Veränderungen in GitHub speichern</h2>
+      <ol>
+        <li>Änderung im Dokument in VS Code [M = modified]</li>
+        <li>Folgende Befehle im Terminal eingeben:</li>
+        <ul>
+          <li><span class="command">git add .</span> [A = added]</li>
+          <li><span class="command">git commit -m 'commit'</span></li>
+          <li><span class="command">git push</span></li>
+        </ul>
+      </ol>
+
+      <h2>Projekt klonen</h2>
+      <ol>
+        <li>Lokalen Ordner erstellen</li>
+        <li>Ordner in VS Code ziehen und Terminal öffnen (Cmd+J)</li>
+        <li>
+          Befehl eingeben:
+          <span class="command"
+            >git clone
+            <span class="branch"
+              >https://github.com/Melina412/_____.git</span
+            ></span
+          >
+          (github-url des repo was man klonen will)
+        </li>
+      </ol>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertiefung - GitHub cheat sheet</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GitHub cheat sheet</h1>
+      <nav>
+        <a href="./index.html">Grundlagen</a>
+        <a href="./vertiefung.html">Vertiefung</a>
+      </nav>
+    </header>
+    <main>
+      <h2>Collaboration starten</h2>
+      <ol>
+        <li>Neues Repo erstellen</li>
+        <li>➡︎ Settings</li>
+        <li>➡︎ Collaborators</li>
+        <li>Team einladen</li>
+      </ol>
+
+      <h2>Arbeitsablauf:</h2>
+      <h3>Variante 1</h3>
+      <img src="./assets/img/variante1.png" alt="Schema Variante 1" />
+      <h3>Variante 2: mit dev branch</h3>
+      <img src="./assets/img/variante2.png" alt="Schema Variante 2" />
+
+      <!-- ---------- branch erstellen ---------- -->
+
+      <h2>Branch erstellen (Verzweigung von main branch)</h2>
+      <h3>im Terminal:</h3>
+      <ul>
+        <li>
+          <span class="command"
+            >git branch <span class="branch">melina</span></span
+          >
+          (<span class="branch">name der branch</span> wird angelegt)
+        </li>
+        <li>
+          <span class="command"
+            >git checkout <span class="branch">melina</span></span
+          >
+          (wechselt in die branch)
+        </li>
+        <li>
+          <span class="command"
+            >git checkout -b <span class="branch">melina</span></span
+          >
+          (⬆ beide schritte zusammen)
+        </li>
+        <li>
+          <span class="command">git checkout main</span>
+          (wechselt zur main branch)
+        </li>
+        <li>
+          <span class="command"
+            >git branch -d <span class="branch">melina</span></span
+          >
+          (branch löschen)
+        </li>
+        <li>
+          <span class="command"
+            >❗️ git branch -D <span class="branch">melina</span></span
+          >
+          (branch wird unabhängig vom Status und ohne Warnung gelöscht)
+        </li>
+        <li>
+          <span class="command">git branch</span>
+          (zeigt alle vorhandenen branches an)
+        </li>
+      </ul>
+
+      <!-- ---------- branch verwalten ---------- -->
+
+      <h2>Branch verwalten</h2>
+      <h3>im Terminal:</h3>
+      <ul>
+        <li>
+          <span class="command"
+            >git push origin <span class="branch">melina</span></span
+          >
+          (Änderungen in eigener branch pushen)
+        </li>
+        <li>
+          <span class="command"
+            >git pull origin <span class="branch">main</span></span
+          >
+          (Änderungen aus main branch in eigene branch pullen)
+        </li>
+        <li>
+          ℹ️ branch in der man sich befindet und ob es Änderungen zum
+          pushen/spanullen gibt, wird in VS code in der Leiste unten links
+          angezeigt
+        </li>
+        <li>
+          <span class="command"
+            >git checkout -b <span class="branch">newbranch</span></span
+          >
+          (branch erstellen und wechseln; ❗️ Änderungen aus vorheriger branch
+          gehen verloren, wenn man sie nicht vorher pusht)
+        </li>
+      </ul>
+
+      <!-- ---------- Commit anzeigen ---------- -->
+
+      <h2>Commits anzeigen</h2>
+      <h3>im Terminal:</h3>
+      <ul>
+        <li>
+          <span class="command">git log --all</span> alle commits anzeigen
+        </li>
+        <li>
+          <span class="command">git log --oneline</span> alle commits in einer
+          line anzeigen
+        </li>
+        <li>
+          <span class="command">git log --graph</span> grafische Verzweigung der
+          commits anzeigen
+        </li>
+        <li>
+          <span class="command">git log --all --oneline --graph</span> ↳ alles
+          zusammen
+        </li>
+        <li><span class="command">q</span> zurück zur vorherigen Ansicht</li>
+      </ul>
+
+      <!-- ---------- Merge ---------- -->
+
+      <h2>Merge</h2>
+      <h3>im Terminal:</h3>
+      <ol>
+        <li>
+          <span class="command"
+            >git checkout <span class="branch">branch name</span></span
+          >
+          in die branch navigieren die man mergen will (in der man gearbeitet
+          hat)
+        </li>
+        <li>
+          <span class="command"
+            >git merge <span class="branch">main</span></span
+          >
+          branch wird mit main branch gemerged
+        </li>
+        <li>
+          <span class="command"
+            >git checkout <span class="branch">main</span></span
+          >
+          in main branch navigieren
+        </li>
+        <li>
+          <span class="command"
+            >git branch -d <span class="branch">branch name</span>
+          </span>
+          branch löschen, wenn sie nicht mehr benötigt wird
+        </li>
+      </ol>
+
+      <!-- ---------- Früherer Commit ---------- -->
+
+      <h2>Zu früherem Commit zurück gehen</h2>
+      <h3>im Terminal:</h3>
+      <ol>
+        <li>
+          <span class="command">git log --oneline</span> aufrufen um commits mit
+          ID anzuzeigen
+        </li>
+
+        <li>
+          <span class="command"
+            >git checkout <span class="branch">000000</span></span
+          >
+          in commit wechseln
+        </li>
+
+        <ul style="list-style: none">
+          <li>
+            ↳ oder
+            <span class="command"
+              >git checkout -b <span class="branch">neuer branch name</span> +
+              <span class="branch">000000</span></span
+            >
+            commit in als neue branch öffnen und dorthin wechseln
+          </li>
+        </ul>
+
+        <li>
+          <span class="command">git add .</span>
+        </li>
+
+        <li>
+          <span class="command"
+            >git commit -m <span class="branch">'commit'</span></span
+          >
+        </li>
+
+        <li>
+          <span class="command"
+            >git push origin <span class="branch">neuer branch name</span></span
+          >
+        </li>
+      </ol>
+    </main>
+  </body>
+</html>
